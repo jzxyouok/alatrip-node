@@ -14,9 +14,14 @@ export default class extends think.model.base {
 
         async getlistbycity(lat,lon,hotelCity,hotelState,page,num) {
                 let p = (page-1)*num;
+           
                 
-                let sql = "SELECT *,ACOS(SIN(('"+lat+"' * 3.1415) / 180 ) *SIN((hotelLatitude * 3.1415) / 180 ) +COS(('"+lat+"' * 3.1415)/180)*COS((hotelLatitude*3.1415)/180)*COS(('"+lon+"'*3.1415)/180-(hotelLongitude*3.1415)/180))*6380 AS dis"+ 
+               
+           
+               let sql = "SELECT * ,(ACOS(SIN(('"+lat+"' * 3.1415) / 180 ) *SIN((hotelLatitude * 3.1415) / 180 ) +COS(('"+lat+"' * 3.1415)/180)*COS((hotelLatitude*3.1415)/180)*COS(('"+lon+"'*3.1415)/180-(hotelLongitude*3.1415)/180))*6380)*1000 AS dis "+ 
                 "FROM ala_hotel WHERE hotelCity='"+hotelCity+"' AND hotelState='"+hotelState+"' order by dis LIMIT "+p+","+num;
+                
+               
                 let data = await this.query(sql);
                 return data;
         }

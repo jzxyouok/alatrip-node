@@ -26,7 +26,7 @@ export default class extends Base {
               let hotelLongitude = this.get('hotelLongitude');
               let page = this.get('page');
               let num = this.get('num');
-            data = await this.model('hotel').getlistbycity(hotelLatitude,hotelLongitude,hotelCity,2,page,num);
+            data = await this.model('hotel').getlistbycity(hotelLatitude,hotelLongitude,hotelCity,1,page,num);
         } else {
             //data = await this.modelInstance.where({userCell: "111"}).find();
         }

@@ -18,7 +18,7 @@ export default class extends Base {
         let ww = (p-1)*n;
        
     //  let sql = "SELECT * FROM ala_test LIMIT "+ww;
-    let sql = "SELECT * ,(testCell+'"+p+"')*'"+n+"' AS ee FROM ala_test LIMIT "+ww+","+n;
+    let sql = "SELECT * ,(testCell+'"+p+"')*'"+n+"' AS ee FROM ala_test order by ee LIMIT "+ww+","+n;
       //let sql = "SELECT * ,testCell AS ee FROM ala_test LIMIT "+ww+","+n;
           
             let data = await this.model('test').query(sql);
