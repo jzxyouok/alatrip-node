@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>阿拉旅行</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="宾馆,旅游,钟点房,阿拉旅行,阿拉" />
+    <meta name="Description" content="阿拉旅行网是一家为广大网友提供宾馆订房、旅游订票的专业网站。" />
+    <script type="application/x-javascript">
+        addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+    </script>
+    <link href="/static/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="/static/css/style.css" rel='stylesheet' type='text/css' />
+    <script src="/static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <!---- start-smoth-scrolling---->
+    <script type="text/javascript" src="/static/js/move-top.js"></script>
+    <script type="text/javascript" src="/static/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+    </script>
+    <!--start-smoth-scrolling-->
+</head>
+
+<body>
+    <!--start-header-->
+    <div class="header" id="home">
+        <div class="container">
+            <div class="head">
+                <div class="logo">
+                    <a href="/index/index.html"><img src="/static/img/logo.png" alt="" /></a>
+                </div>
+                <div class="navigation">
+                    <span class="menu"></span>
+                    <ul class="navig">
+                        <li><a href="/index/index.html" class="active hvr-bounce-to-bottom">首页</a></li>
+                        <li><a href="http://flights.ctrip.com/" target="_black" class="hvr-bounce-to-bottom">飞机票</a></li>
+                        <li><a href="http://trains.ctrip.com/" target="_black" class="hvr-bounce-to-bottom">火车票</a></li>
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="hvr-bounce-to-bottom">用户<strong class="caret"></strong></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="/index/login.html">登陆</a>
+                                </li>
+                                <li>
+                                    <a href="/index/register.html">注册</a>
+                                </li>
+                                <li>
+                                    <a href="#">订单</a>
+                                </li>
+
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- script-for-menu -->
+    <!-- script-for-menu -->
+    <script>
+        $("span.menu").click(function(){
+				$(" ul.navig").slideToggle("slow" , function(){
+				});
+			});
+    </script>
+    <!-- script-for-menu -->
+    <!--start-banner-->
+    <div class="banner">
+        <div class="container">
+            <div class="banner-top">
+                <h1>预 &nbsp;&nbsp;定</h1>
+
+                <div class="banner-bottom">
+
+                    <ul id="myTab" class="nav nav-pills">
+                        <li class="active">
+                            <a href="#quanri" data-toggle="tab">全日房</a>
+                        </li>
+                        <li>
+                            <a href="#zhongdian" data-toggle="tab">钟点房</a>
+                        </li>
+                        <li>
+                            <a href="#jingdian" data-toggle="tab">景点门票</a>
+                        </li>
+
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <div class="tab-pane fade in active" id="quanri">
+                            <p>
+                                <form action="/search/result" method="get">
+                                <input name="type" type="hidden" value="1">
+                                    <div class="bnr-one">
+                                        <div class="bnr-left">
+                                            <p>入住</p>
+                                        </div>
+                                        <div class="bnr-right">
+                                            <input class="date" id="datepicker" type="text" placeholder="选择入住时间" name="bdate">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+
+                                    <div class="bnr-one">
+                                        <div class="bnr-left">
+                                            <p>离店</p>
+                                        </div>
+                                        <div class="bnr-right">
+                                            <input class="date" id="datepicker1" type="text" placeholder="选择离店时间" name="edate">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="bnr-one">
+                                        <div class="bnr-left">
+                                            <p>酒店(可选)</p>
+                                        </div>
+                                        <div class="bnr-right">
+                                            <input type="text" placeholder="酒店名称" name="">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="bnr-one">
+                                        <div class="bnr-left">
+                                            <p>城市</p>
+                                        </div>
+                                        <div class="bnr-right">
+                                            <input type="text" class="searchInput" name="CityName" id="CityName" value="" mod="address|notice" mod_address_source="hotel"
+                                            mod_address_suggest="" mod_address_reference="cityid" mod_notice_tip="中文/拼音"
+                                            />
+                                            <script src="/static/js/MyCityPicker/fixdiv.js"></script>
+                                            <script src="/static/js/MyCityPicker/address.js"></script>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="bnr-btn">
+
+                                        <input type="submit" value="搜索">
+
+                                    </div>
+                                </form>
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="zhongdian">
+                            <p>
+                                <form action="/search/result" method="get">
+                                <input name="type" type="hidden" value="2">
+                                <div class="bnr-one">
+                                    <div class="bnr-left">
+                                        <p>入住</p>
+                                    </div>
+                                    <div class="bnr-right">
+                                        <input class="date" id="datepicker3" type="text" >
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+
+                                <div class="bnr-one">
+                                    <div class="bnr-left">
+                                        <p>时间</p>
+                                    </div>
+                                    <div class="bnr-right">
+                                        <input class="date" id="datepicker4" type="text" value="" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}"
+                                        required=>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="bnr-one">
+                                    <div class="bnr-left">
+                                        <p>时长</p>
+                                    </div>
+                                    <div class="bnr-right">
+                                        <select>
+                                            <option class="rm" value="volvo">1</option>
+                                            <option class="rm" value="saab">2</option>
+                                            <option class="rm" value="opel">3</option>
+                                            <option class="rm" value="audi">4</option>
+                                        </select>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="bnr-one">
+                                    <div class="bnr-left">
+                                        <p>酒店(可选)</p>
+                                    </div>
+                                    <div class="bnr-right">
+                                        <input type="text" value="" required=>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="bnr-one">
+                                    <div class="bnr-left">
+                                        <p>城市</p>
+                                    </div>
+                                    <div class="bnr-right">
+                                        <input type="text" class="searchInput" name="CityName" id="CityName2" value="" mod="address|notice" mod_address_source="hotel"
+                                        mod_address_suggest="" mod_address_reference="cityid" mod_notice_tip="中文/拼音" />
+                                        <script src="/static/js/MyCityPicker/fixdiv.js"></script>
+                                        <script src="/static/js/MyCityPicker/address.js"></script>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="bnr-btn">
+                                  
+                                        <input type="submit" value="搜索">
+                                   
+                                </div>
+                                </form>
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="jingdian">
+                            <p>
+                                <div class="bnr-one">
+                                    <div class="bnr-left">
+                                        <p>日期</p>
+                                    </div>
+                                    <div class="bnr-right">
+                                        <input class="date" id="datepicker5" type="text" value="" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '';}"
+                                        required=>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="bnr-one">
+                                    <div class="bnr-left">
+                                        <p>景点(可选)</p>
+                                    </div>
+                                    <div class="bnr-right">
+                                        <input type="text" value="" required=>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+
+                                <div class="bnr-one">
+                                    <div class="bnr-left">
+                                        <p>城市</p>
+                                    </div>
+                                    <div class="bnr-right">
+                                        <input type="text" class="searchInput" name="CityName" id="CityName3" value="" mod="address|notice" mod_address_source="hotel"
+                                        mod_address_suggest="" mod_address_reference="cityid" mod_notice_tip="中文/拼音" />
+                                        <script src="/static/js/MyCityPicker/fixdiv.js"></script>
+                                        <script src="/static/js/MyCityPicker/address.js"></script>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="bnr-btn">
+                                    <form>
+                                        <input type="submit" value="搜索">
+                                    </form>
+                                </div>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--end-banner-->
+    <!---start-date-piker---->
+    <link rel="stylesheet" href="/static/css/jquery-ui.css" />
+    <script src="/static/js/jquery-ui.js"></script>
+    <script>
+        $(function() {
+				$( "#datepicker,#datepicker1,#datepicker2,#datepicker3,#datepicker4,#datepicker5" ).datepicker();
+				});
+    </script>
+    <!---/End-date-piker---->
+    <!---start-why-->
+    <div class="why" id="about">
+        <div class="container">
+            <div class="why-top heading">
+                <h3>为什么选择我们？</h3>
+                <p>无需前台直接入住</p>
+            </div>
+            <div class="why-bottom">
+                <div class="col-md-4 why-left">
+                    <img src="/static/img/reception_index.png" alt="" />
+                    <p>第一次注册只需在前台验证登记身份证，以后预定便可直接入住，无需再次前往前台登记。</p>
+                </div>
+                <div class="col-md-4 why-left">
+                    <img src="/static/img/id_index.png" alt="" />
+                    <p>凡在本平台连锁酒店宾馆预订房间，只需身份证开锁，无需其他证件。</p>
+                </div>
+                <div class="col-md-4 why-left">
+                    <img src="/static/img/vip_index.png" alt="" />
+
+                    <p>会员免定金，无需查房，直接离开。</p>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--end-why-->
+    <!--start-how-->
+    <div class="how">
+        <div class="container">
+            <div class="how-bottom">
+                <div class="col-md-6 how-left">
+                    <img src="/static/img/h-1.jpg" alt="" />
+                </div>
+                <div class="col-md-6 how-right">
+                    <div class="how-top heading">
+                        <h3>如何预订</h3>
+                    </div>
+                    <p>新用户需要在
+                        <lable>本网站</lable>或者
+                        <lable>android</lable>、
+                        <lable>ios</lable> APP进行注册，然后预订自己需要的房间，入住时需要去
+                        <lable>前台验证身份证</lable>，便可用身份证开锁入住。老用户预订后直接进房，无需再次去前台验证。景点门票无需身份证验证，注册后直接预订。</p>
+                    <div class="h-btn">
+                        <a href="#">前去注册</a>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!--end-how-->
+
+
+    <!--start-events-->
+    <div class="events" id="events">
+        <div class="container">
+            <div class="events-top heading">
+                <h3>酒店宾馆精选</h3>
+            </div>
+            <div class="events-bottom">
+                <section class="slider">
+                    <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <div class="col-md-4 events-main">
+                                    <div class="events-left">
+                                        <a href="index.html">
+                                            <img src="/static/img/e-1.jpg" alt="" />
+                                            <div class="event-btm">
+                                                <h4> 青岛大酒店</h4>
+                                            </div>
+                                        </a>
+                                        <p>环境优雅</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 events-main">
+                                    <div class="events-left">
+                                        <img src="/static/img/e-2.jpg" alt="" />
+                                        <div class="event-btm">
+                                            <h4>深圳大酒店</h4>
+                                        </div>
+                                        <p>半折优惠</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 events-main">
+                                    <div class="events-left">
+                                        <img src="/static/img/e-3.jpg" alt="" />
+                                        <div class="event-btm">
+                                            <h4>山东宾馆</h4>
+                                        </div>
+                                        <p>免费早餐</p>
+                                    </div>
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                            <li>
+                                <div class="col-md-4 events-main">
+                                    <div class="events-left">
+                                        <img src="/static/img/e-1.jpg" alt="" />
+                                        <div class="event-btm">
+                                            <h4>北京大酒店</h4>
+                                        </div>
+                                        <p>八折优惠</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 events-main">
+                                    <div class="events-left">
+                                        <img src="/static/img/e-2.jpg" alt="" />
+                                        <div class="event-btm">
+                                            <h4>xx宾馆</h4>
+                                        </div>
+                                        <p>免费小吃</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 events-main">
+                                    <div class="events-left">
+                                        <img src="/static/img/e-3.jpg" alt="" />
+                                        <div class="event-btm">
+                                            <h4>xxx宾馆</h4>
+                                        </div>
+                                        <p>无优惠</p>
+                                    </div>
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+    <!--end-events-->
+
+    <!--FlexSlider-->
+    <link rel="stylesheet" href="/static/css/flexslider.css" type="text/css" media="screen" />
+    <script defer src="/static/js/jquery.flexslider.js"></script>
+    <script type="text/javascript">
+        $(function(){
+      SyntaxHighlighter.all();
+    });
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide",
+        start: function(slider){
+          $('body').removeClass('loading');
+        }
+      });
+		});
+    </script>
+    </div>
+    <!--End-slider-script-->
+
+    <!--start-blog
+    <div class="news" id="news">
+        <div class="container">
+            <div class="news-top heading">
+                <h3>新闻资讯</h3>
+            </div>
+            <div class="news-bottom">
+                <div class="news-one">
+                    <div class="col-md-6 news-left">
+                        <div class="n-left">
+                            <img src="img/blog-1.png" alt="" />
+                        </div>
+                        <div class="n-right">
+                            <h4>标题</h4>
+                            <p class="admin">作者</p>
+                            <p>内容</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-6 news-left">
+                        <div class="n-left">
+                            <img src="img/blog-2.png" alt="" />
+                        </div>
+                        <div class="n-right">
+                            <h4>标题</h4>
+                            <p class="admin">作者</p>
+                            <p>内容</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="news-one">
+                    <div class="col-md-6 news-left">
+                        <div class="n-left">
+                            <img src="img/blog-3.png" alt="" />
+                        </div>
+                        <div class="n-right">
+                            <h4>标题</h4>
+                            <p class="admin">作者</p>
+                            <p>内容</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="col-md-6 news-left">
+                        <div class="n-left">
+                            <img src="img/blog-4.png" alt="" />
+                        </div>
+                        <div class="n-right">
+                            <h4>标题</h4>
+                            <p class="admin">作者</p>
+                            <p>内容</p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    end-blog-->
+
+    <!--start-footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="touch-top heading">
+                <h3>联系我们</h3>
+            </div>
+            <div class="touch-bottom">
+                <p>深圳－广东</p>
+                <h6>15315527729</h6>
+                <p>1424009968@qq.com</p>
+                <ul>
+
+                </ul>
+            </div>
+            <div class="footer-top">
+                <p class="footer-class">Copyright &copy; 2016.Alalvxing All rights reserved. </p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+        </script>
+        <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    </div>
+    <!--end-footer-->
+</body>
+
+</html>
