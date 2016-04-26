@@ -72,13 +72,13 @@ export default class extends Base {
 
         let map = {
             testCell: this.post("testCell"),
-            testName: this.post("testName")
-            
+            testName: this.post("testName")   
+                 
         };
         
        let insertId = await this.model("test").add(map);
        let time=times();
-        //return this.fail(10,"insertId","11");
+       
         return this.success(time);
     }
 }
